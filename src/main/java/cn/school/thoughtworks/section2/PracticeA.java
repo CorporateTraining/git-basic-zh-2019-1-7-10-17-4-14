@@ -9,7 +9,12 @@ public class PracticeA {
         Map<String, Integer> result = new HashMap<>();
 
         for (String collection : collection1) {
-            result.put(collection, result.getOrDefault(collection, 1));
+            if (result.containsKey(collection)) {
+                result.put(collection, result.get(collection) + 1);
+            } else {
+                result.put(collection, 1);
+            }
+
         }
 
         return result;
